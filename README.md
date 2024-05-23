@@ -2,6 +2,8 @@
 
 ## Nom i cognoms
 
+## Fecha de entrega: 9 de junio a medianoche
+
 ## Creación del paquete `apa`
 
 Debe crearse un paquete que incluya las funciones desarrolladas durante el curso y que tenga la siguiente estructura:
