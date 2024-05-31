@@ -14,7 +14,6 @@ Las funciones implementadas son:
 
 """
 import struct as st
-from docopt import docopt
 
 def read_wave(filename: str) -> dict | dict:
     """
@@ -313,4 +312,44 @@ def decEstereo(ficCod: str, ficEste: str):
     write_wave(ficEste, header, data)
 
 if __name__ == "__main__":
-    args = docopt(__doc__, version='Estereo v1.0')
+    import sys
+    from docopt import docopt
+
+    usage = f"""
+        WAVE audio files management
+
+        Usage:
+            {sys.argv[0]} mono [options] [--] <ficEste> <ficMono>
+            {sys.argv[0]} [options] [--] <ficL> <ficEste>
+            {sys.argv[0]} [options] [--] <ficL> <ficR> <ficEste>
+
+        Options:
+            -h, --help            Usage information
+            --version             Shows version
+            -l, --left            Mono audio is the left channel
+            -r, --right           Mono audio is the right channel
+            -s, --suma            Mono audio is the semi-sum of both channels [default]
+            -d, --diferencia      Mono audio is the semi-difference of both channels
+    """
+
+    args = docopt(usage, help=True, version="Gerard i Joel 2024")
+
+    if args["--left"]:
+        canal = 0
+    elif args["--right"]:
+        canal = 1
+    elif args["--suma"]:
+        canal = 2
+    elif args["--diferencia"]:
+        canal = 3
+    else:
+        canal = 2
+    
+    if args["mono"]:
+        estereo2mono(args["<ficEste>"], args["<ficMono>"], canal)
+    elif args["<ficL>"] and args["<ficEste>"]:
+        if args["<ficR>"]:
+            mono2estereo(args["<ficL>"], args["<ficR>"], args["<ficEste>"])
+        else:
+            mono2estereo(args["<ficL>"], args["<ficL>"], args["<ficEste>"])
+    
