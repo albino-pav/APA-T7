@@ -1,4 +1,3 @@
-#! /usr/bin/python3
 """
 Gerard Cots i Escude i Joel Joan Morera
 
@@ -97,6 +96,11 @@ def read_wave(filename: str) -> dict | dict:
 def write_wave(filename: str, header: dict, data: dict):
     """
     Writes a WAVE file with the given header and data dictionaries.
+
+    Args:
+        filename: name of the file to write
+        header: dictionary with the header information
+        data: dictionary with the data information
     """
     if header["Format"] != b"WAVE":
         raise ValueError(f"File {filename} is not a WAVE file")
@@ -311,60 +315,8 @@ def decEstereo(ficCod: str, ficEste: str):
 
     write_wave(ficEste, header, data)
 
+
 if __name__ == "__main__":
-    import sys
-    from docopt import docopt
-
-    usage = f"""
-        WAVE audio files management
-
-        Usage:
-            {sys.argv[0]} mono [options] <ficEste> <ficMono>
-            {sys.argv[0]} [options] <ficL> <ficEste>
-            {sys.argv[0]} [options] <ficL> <ficR> <ficEste>
-
-        Options:
-            -h, --help            Usage information
-            --version             Shows version
-            -l, --left            Mono audio is the left channel
-            -r, --right           Mono audio is the right channel
-            -s, --suma            Mono audio is the semi-sum of both channels [default]
-            -d, --diferencia      Mono audio is the semi-difference of both channels
-    """
-
-    args = docopt(usage, help=True, version="Gerard i Joel 2024")
-
-    # Check errors
-    options = [args["--left"], args["--right"], args["--suma"], args["--diferencia"]]
-    if not args["mono"] and any(options):
-        print("Error: --left, --right, --suma and --diferencia options are only available for mono conversion")
-        sys.exit(1)
-    elif args["mono"] and sum(options) > 1:
-        print("Error: --left, --right, --suma and --diferencia options are exclusive between them")
-        sys.exit(1)
-    
-    if args["mono"]:
-        if args["--left"]:
-            canal = 0
-        elif args["--right"]:
-            canal = 1
-        elif args["--suma"]:
-            canal = 2
-        elif args["--diferencia"]:
-            canal = 3
-        else:
-            canal = 2
-
-        try:
-            estereo2mono(args["<ficEste>"], args["<ficMono>"], canal)
-        except ValueError as e:
-            print(e)
-    elif args["<ficL>"] and args["<ficEste>"]:
-        try:
-            mono2estereo(
-                args["<ficL>"], 
-                args["<ficR>"] if args["<ficR>"] else args["<ficL>"],
-                args["<ficEste>"])
-        except ValueError as e:
-            print(e)
+    import doctest
+    doctest.testmod()
     
