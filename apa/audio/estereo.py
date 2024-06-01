@@ -319,9 +319,9 @@ if __name__ == "__main__":
         WAVE audio files management
 
         Usage:
-            {sys.argv[0]} mono [options] [--] <ficEste> <ficMono>
-            {sys.argv[0]} [options] [--] <ficL> <ficEste>
-            {sys.argv[0]} [options] [--] <ficL> <ficR> <ficEste>
+            {sys.argv[0]} mono [options] <ficEste> <ficMono>
+            {sys.argv[0]} [options] <ficL> <ficEste>
+            {sys.argv[0]} [options] <ficL> <ficR> <ficEste>
 
         Options:
             -h, --help            Usage information
@@ -334,22 +334,37 @@ if __name__ == "__main__":
 
     args = docopt(usage, help=True, version="Gerard i Joel 2024")
 
-    if args["--left"]:
-        canal = 0
-    elif args["--right"]:
-        canal = 1
-    elif args["--suma"]:
-        canal = 2
-    elif args["--diferencia"]:
-        canal = 3
-    else:
-        canal = 2
+    # Check errors
+    options = [args["--left"], args["--right"], args["--suma"], args["--diferencia"]]
+    if not args["mono"] and any(options):
+        print("Error: --left, --right, --suma and --diferencia options are only available for mono conversion")
+        sys.exit(1)
+    elif args["mono"] and sum(options) > 1:
+        print("Error: --left, --right, --suma and --diferencia options are exclusive between them")
+        sys.exit(1)
     
     if args["mono"]:
-        estereo2mono(args["<ficEste>"], args["<ficMono>"], canal)
-    elif args["<ficL>"] and args["<ficEste>"]:
-        if args["<ficR>"]:
-            mono2estereo(args["<ficL>"], args["<ficR>"], args["<ficEste>"])
+        if args["--left"]:
+            canal = 0
+        elif args["--right"]:
+            canal = 1
+        elif args["--suma"]:
+            canal = 2
+        elif args["--diferencia"]:
+            canal = 3
         else:
-            mono2estereo(args["<ficL>"], args["<ficL>"], args["<ficEste>"])
+            canal = 2
+
+        try:
+            estereo2mono(args["<ficEste>"], args["<ficMono>"], canal)
+        except ValueError as e:
+            print(e)
+    elif args["<ficL>"] and args["<ficEste>"]:
+        try:
+            mono2estereo(
+                args["<ficL>"], 
+                args["<ficR>"] if args["<ficR>"] else args["<ficL>"],
+                args["<ficEste>"])
+        except ValueError as e:
+            print(e)
     
