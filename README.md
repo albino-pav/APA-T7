@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Nom i cognoms: Gerard Cots i Escude i Joel Joan Morera Bokobo
 
 ## Fecha de entrega: 9 de junio a medianoche
 
