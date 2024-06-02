@@ -1,0 +1,1 @@
+from apa.mates.numeros.primos import esPrimo, primos
