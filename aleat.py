@@ -8,7 +8,7 @@ from apa.mates.numeros.aleatorios import *
 if __name__ == "__main__":
     usage = f"""
 
-        Random number generator
+        Generador numeros aleatorios
         
         Usage:
             {sys.argv[0]} [options]

@@ -1,24 +1,3 @@
-#DIDAC BASSAS
-
-
-Dídac
-#### Función `mono2estereo(ficIzq, ficDer, ficEste)`
-
-La función lee el fichero ficEste, que debe contener una señal estéreo, y escribe el fichero ficMono, con una señal monofónica. El tipo concreto de señal que se almacenará en ficMono depende del argumento canal:
-
-#### mono2estereo(ficIzq, ficDer, ficEste)
-
-Lee los ficheros ficIzq y ficDer, que contienen las señales monofónicas correspondientes a los canales izquierdo y derecho, respectivamente, y construye con ellas una señal estéreo que almacena en el fichero ficEste.
-
-
-#### Función `codEstereo(ficEste, ficCod)`
-
-Lee el fichero \python{ficEste}, que contiene una señal estéreo codificada con PCM lineal de 16 bits, y construye con ellas una señal codificada con 32 bits que permita su reproducción tanto por sistemas monofónicos como por sistemas estéreo preparados para ello.
-
-
-#### Función `decEstereo(ficCod, ficEste)`
-
-Lee el fichero \python{ficCod} con una señal monofónica de 32 bits en la que los 16 bits más significativos contienen la semisuma de los dos canales de una señal estéreo y los 16 bits menos significativos la semidiferencia, y escribe el fichero \python{ficEste} con los dos canales por separado en el formato de los ficheros WAVE estéreo.
 
 # Be estereo2mono
 
