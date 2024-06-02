@@ -1,2 +1,3 @@
+#! /usr/bin/python3
 
-import apa.mates
+import apa.mates, apa.análisis, apa.audio
