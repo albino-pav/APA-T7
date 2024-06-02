@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Dídac Bassas, Vadym lakymchuk
 
 ## Fecha de entrega: 9 de junio a medianoche
 
