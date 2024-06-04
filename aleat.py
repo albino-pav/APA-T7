@@ -12,11 +12,11 @@ Usage:
     {sys.argv[0]} -h | --help
     
 Options:
-    -s, --semilla=<ENTERO>          Establecer semilla del generador. 
-    -n, --numero=ENTERO             Cantidad de números aleatorios a generar.
-    -N, --norm                      Números decimales de 0 a 1.
-    -h, --help                      Mostrar esta pantalla.
-    --version                       Mostrar versión.
+    -s, --semilla=<ENTERO>  Establece la semilla del generador. 
+    -n, --numero=ENTERO     Cantidad de números aleatorios a generar.
+    -N, --norm              Números decimales de 0 a 1.
+    -h, --help              Muestra esta pantalla.
+    --version               Muestra la versión.
 """
 
 if __name__ == "__main__":
