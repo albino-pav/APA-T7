@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms: Yago Carballo Barroso
+## Nom i cognoms: Yago Carballo Barros
 
 ## Fecha de entrega: 9 de junio a medianoche
 
