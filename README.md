@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Nom i cognoms: Sonia Sahuquillo Guillén y Marcel Farelo de la Orden
 
 ## Fecha de entrega: 9 de junio a medianoche
 
