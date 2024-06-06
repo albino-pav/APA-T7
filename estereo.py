@@ -5,10 +5,11 @@
 
 import sys
 from docopt import docopt
-from APA import estereo2mono, mono2estereo
+
+from apa import estereo2mono, mono2estereo
 
 def main():
-    doc = f"""
+doc = f"""
         Gestion de archivos de audio WAVE
 
         Uso:
@@ -26,9 +27,9 @@ def main():
             -s, --suma             El audio mono es la semisuma de ambos canales [por defecto]
             -d, --diferencia       El audio mono es la semidiferencia de ambos canales
     """
-    argumentos = docopt(doc, help=True, version="Version 2024")
+argumentos = docopt(doc, help=True, version="Version 2024")
     
-    if argumentos["mono"]:
+if argumentos["mono"]:
         if argumentos["--izquierda"]:
             canal = 0
         elif argumentos["--derecha"]:
@@ -44,7 +45,7 @@ def main():
             estereo2mono(argumentos["<archivoEstereo>"], argumentos["<archivoMono>"], canal)
         except ValueError as e:
             print(f"Error: {e}")
-    else:
+else:
         try:
             mono2estereo(
                 argumentos["<archivoIzquierdo>"], 
