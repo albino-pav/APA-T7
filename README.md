@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Nom i cognoms: Guillermo Efrén Medina Guamán y Raul Gonzalez Diaz
 
 ## Fecha de entrega: 9 de junio a medianoche
 
