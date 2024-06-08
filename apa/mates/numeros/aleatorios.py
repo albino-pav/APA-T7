@@ -17,7 +17,7 @@ class Aleat:
         20
         1
     """
-    def __init__(self, *, m=2**48, c=11, a=25214903917, x0=1212121): # solo_posición, /, libre, *, solo_clave
+    def __init__(self, *, m=2**48, c=11, a=25214903917, x0=1212121):
         self.m = m
         self.a = a
         self.c = c
