@@ -19,7 +19,7 @@ if __name__ == "__main__":
             -n, --numero (INT)   Numero de números aleatorios a generar
             -N, --norm            Normalizar los números aleatorios entre 0 y 1
     """
-    args = docopt(usage, help=True, version="Gerard i Joel 2024")
+    args = docopt(usage, help=True, version="Ivan Enciso Hernandez & Pau Codina Peñarroya 2024")
     
     seed = int(args["--semilla"]) if args["--semilla"] else hash(dt.now())
     n = int(args["--numero"]) if args["--numero"] else 1
