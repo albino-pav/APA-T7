@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Ivan Enciso y Pau Codina
 
 ## Fecha de entrega: 9 de junio a medianoche
 
