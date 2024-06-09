@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Nom i cognoms: Gerard Soteras i Ferran Murcia
 
 ## Fecha de entrega: 9 de junio a medianoche
 

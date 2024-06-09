@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from docopt import docopt
 from datetime import datetime as dt
 import random

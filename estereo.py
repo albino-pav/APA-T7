@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from docopt import docopt
 import sys
 import apa.audio.estereo as estereo
