@@ -1,6 +1,6 @@
 # Paquetes y Programas (versión provisional)
 
-## Nom i cognoms
+## Nom i cognoms Maider Duró y Victory Blanco
 
 ## Fecha de entrega: 9 de junio a medianoche
 
